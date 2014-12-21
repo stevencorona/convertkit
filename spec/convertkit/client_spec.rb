@@ -24,7 +24,6 @@ module ConvertKit
       it "allows you to pass in the uri" do
         expect(ConvertKit::Client.new(123, "https://api.dummy.com").uri).to eq("https://api.dummy.com")
       end
-
     end
   end
 end

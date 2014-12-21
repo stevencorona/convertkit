@@ -9,5 +9,20 @@ module ConvertKit
       @version = 2
     end
 
+    def form(id)
+      ConvertKit::Form.new(id)
+    end
+
+    def forms()
+      raw   = get("/forms")
+      forms = []
+
+      raw.each do |form|
+        forms << ConvertKit::Form.load(form)
+      end
+
+      forms
+    end
+
   end
 end
