@@ -1,5 +1,5 @@
 require "convertkit/version"
 
-module Convertkit
+module ConvertKit
   # Your code goes here...
 end

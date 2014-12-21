@@ -5,7 +5,7 @@ require 'convertkit/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "convertkit"
-  spec.version       = Convertkit::VERSION
+  spec.version       = ConvertKit::VERSION
   spec.authors       = ["Steve Corona"]
   spec.email         = ["thestevecorona@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

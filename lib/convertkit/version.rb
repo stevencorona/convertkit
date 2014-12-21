@@ -1,3 +1,3 @@
-module Convertkit
+module ConvertKit
   VERSION = "0.0.1"
 end
