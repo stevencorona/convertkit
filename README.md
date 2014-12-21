@@ -22,9 +22,7 @@ Or install it yourself as:
 
 First, configure your client like so:
 
-	client = Convertkit::Client.new do |config|
-		config.key = "apikey"
-	end
+	client = Convertkit::Client.new(key: "apikey")
 
 ### Get list of forms
 
