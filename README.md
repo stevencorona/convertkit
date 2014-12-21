@@ -1,6 +1,6 @@
 # Convertkit
 
-TODO: Write a gem description
+Rubygem for the excellent Converkit app. Note: this only supports V2 API.
 
 ## Installation
 
@@ -20,7 +20,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First, configure your client like so:
+
+	client = Convertkit::Client.new do |config|
+		config.key = "apikey"
+	end
+
+### Get list of forms
+
+	forms = client.forms
+
+Will give you back something like this (a ConvertKit::Form object)
+
+	form.id
+	form.subscriber_count
+	form.name
+	form.details
+	form.embed
+
+## Subscribe to a form
+
+	form = client.form(4)
+	form.subscribe(email: "email@email.com", fname: "name", course_opted: true)
+
+## Form details
+
+	form = client.form(4)
+
+
+
 
 ## Contributing
 
