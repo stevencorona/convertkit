@@ -5,7 +5,7 @@ module ConvertKit
 
     def self.load(json)
     end
-s
+    
     def initialize(id)
       @id = id
     end
