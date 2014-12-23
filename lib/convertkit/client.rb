@@ -14,7 +14,10 @@ module ConvertKit
     end
 
     def form(id)
-      ConvertKit::Form.new(id)
+      form = ConvertKit::Form.new(id)
+      form.client = self
+
+      form
     end
 
     def forms()
@@ -24,7 +27,7 @@ module ConvertKit
       puts raw
 
       raw.each do |form|
-        forms << ConvertKit::Form.load(form)
+        forms << ConvertKit::Form.load(form, self)
       end
 
       forms
