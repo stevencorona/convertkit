@@ -1,5 +1,9 @@
+require 'httparty'
+
 module ConvertKit
+
   class Client
+    include HTTParty
 
     attr_reader :key, :uri, :version
 
@@ -14,14 +18,23 @@ module ConvertKit
     end
 
     def forms()
-      raw   = get("/forms")
+      raw   = get_request("/forms")
       forms = []
+
+      puts raw
 
       raw.each do |form|
         forms << ConvertKit::Form.load(form)
       end
 
       forms
+    end
+
+    private 
+
+    def get_request(url)
+      json = self.class.get("#{@uri}/#{url}?k=#{@key}&v=#{@version}")
+      JSON.parse(json.body)
     end
 
   end
