@@ -20,6 +20,10 @@ module ConvertKit
       form
     end
 
+    def courses()
+
+    end
+
     def forms()
       raw   = get_request("/forms")
       forms = []
