@@ -24,10 +24,11 @@ module ConvertKit
       raw   = get_request("/forms")
       forms = []
 
-      puts raw
+      raw.each do |raw_form|
+        form = ConvertKit::Form.new(raw_form["id"])
+        form.load(raw_form, self)
 
-      raw.each do |form|
-        forms << ConvertKit::Form.load(form, self)
+        forms << form
       end
 
       forms
