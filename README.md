@@ -36,13 +36,13 @@ Will give you back something like this (a ConvertKit::Form object)
    			@key="xxxx",
    			@uri="https://api.convertkit.com",
    			@version=2>,
- 	@created_at="2014-12-02T14:15:47Z",
- 	@details="https://api.convertkit.com/forms/4812558?k=xxx&v=2",
- 	@embed="https://api.convertkit.com/forms/4812558/embed?k=xxx&v=2",
- 	@id=481,
- 	@name="10 days to a better gem",
- 	@subscriber_count=4,
- 	@updated_at="2014-12-12T13:26:14Z">
+ 		@created_at="2014-12-02T14:15:47Z",
+ 		@details="https://api.convertkit.com/forms/4812558?k=xxx&v=2",
+ 		@embed="https://api.convertkit.com/forms/4812558/embed?k=xxx&v=2",
+ 		@id=481,
+ 		@name="10 days to a better gem",
+ 		@subscriber_count=4,
+ 		@updated_at="2014-12-12T13:26:14Z">
 
 ## Subscribe to a form
 
