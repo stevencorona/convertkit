@@ -1,6 +1,8 @@
 # Convertkit
 
-Rubygem for the excellent Converkit app. Note: this only supports V2 API.
+Rubygem for the excellent Converkit. Allows you to get forms, courses, and subscribe people to your mailing lists.
+
+*Only supports the v2 API*
 
 ## Installation
 
@@ -52,6 +54,14 @@ Will give you back something like this (a ConvertKit::Form object)
 ## Form details
 
 	form = client.form(4)
+
+## Get Courses
+
+	courses = client.courses
+
+## Get Course Details
+
+	course = client.courses(4)
 
 
 
