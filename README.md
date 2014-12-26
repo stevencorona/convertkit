@@ -33,9 +33,9 @@ Will give you back something like this (a ConvertKit::Form object)
 	#<ConvertKit::Form:0x007fc5020ae460
  		@client=
   			#<ConvertKit::Client:0x007fc502846830
-   			@key="xxxx",
-   			@uri="https://api.convertkit.com",
-   			@version=2>,
+   				@key="xxxx",
+   				@uri="https://api.convertkit.com",
+   				@version=2>,
  		@created_at="2014-12-02T14:15:47Z",
  		@details="https://api.convertkit.com/forms/4812558?k=xxx&v=2",
  		@embed="https://api.convertkit.com/forms/4812558/embed?k=xxx&v=2",
