@@ -25,4 +25,21 @@ module ConvertKit
     end
 
   end
+
+  class Client
+    def forms()
+      raw   = get_request("/forms")
+      forms = []
+
+      raw.each do |raw_form|
+        form = ConvertKit::Form.new(raw_form["id"])
+        form.load(raw_form, self)
+
+        forms << form
+      end
+
+      forms
+    end
+  end
+  
 end
