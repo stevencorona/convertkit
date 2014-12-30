@@ -16,12 +16,14 @@ module ConvertKit
       @updated_at       = data["updated_at"]
     end
     
-    def initialize(id)
-      @id = id
+    def initialize(id, client)
+      @id     = id
+      @client = client
     end
 
-    def subscribe(opts)
-      default = {email: nil, fname: nil, course_opted: true}
+    def subscribe(params)
+      opts = {email: nil, fname: nil, course_opted: true}.merge(params)
+      @client.post_request("/forms/#{@id}/subscribe", opts)
     end
 
   end

@@ -20,14 +20,22 @@ module ConvertKit
       form
     end
 
-    def courses()
-
-    end
-
     private 
 
-    def get_request(url)
-      json = self.class.get("#{@uri}/#{url}?k=#{@key}&v=#{@version}")
+    def get_request(path)
+      json = self.class.get("#{@uri}#{path}?k=#{@key}&v=#{@version}")
+      JSON.parse(json.body)
+    end
+
+    def post_request(path, params)
+
+      url = "#{@uri}#{path}"
+
+      json = self.class.post(path, body: {
+        k: @key,
+        v: @version,
+        }.merge(params))
+      
       JSON.parse(json.body)
     end
 
