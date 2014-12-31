@@ -4,6 +4,14 @@ module ConvertKit
     attr_reader :id, :subscriber_count, :name, :details, :embed, :created_at, :updated_at
     attr_writer :client
 
+    def self.find(id, client)
+      raw  = client.get_request("/forms/#{id}")
+      form = ConvertKit::Form.new(id, client)
+      form.load(raw, client)
+
+      form
+    end
+
     def load(data, client)
       @client = client
 
@@ -34,7 +42,7 @@ module ConvertKit
       forms = []
 
       raw.each do |raw_form|
-        form = ConvertKit::Form.new(raw_form["id"])
+        form = ConvertKit::Form.new(raw_form["id"], self)
         form.load(raw_form, self)
 
         forms << form
