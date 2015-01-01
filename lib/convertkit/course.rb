@@ -4,6 +4,13 @@ module ConvertKit
   	attr_reader :id, :name, :subscriber_count, :unsubscribe_count, :details, :created_at, :updated_at
     attr_writer :client
 
+    def self.find(id, client)
+      raw  = client.get_request("/courses/#{id}")
+      course = ConvertKit::Course.new(id, client)
+      course.load(raw, client)
+
+      course
+
     def load(data, client)
       @client = client
 
@@ -18,8 +25,9 @@ module ConvertKit
 
     end
 
-    def initialize(id)
-      @id = id
+    def initialize(id, client)
+      @id     = id
+      @client = client
     end
 
   end
