@@ -21,8 +21,6 @@ module ConvertKit
       @details           = data["details"]
       @created_at        = data["created_at"]
       @updated_at        = data["updated_at"]
-
-
     end
 
     def initialize(id, client)
