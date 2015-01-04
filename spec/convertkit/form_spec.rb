@@ -33,5 +33,13 @@ module ConvertKit
   		expect(form.success_msg).to eq("Thanks! Now check your email.")
   	end
 
+  	it "allows you to subscribe to a form" do
+
+  		form = ConvertKit::Form.new(4812649, client)
+  		response = form.subscribe(email: "test@test.com", fname: "Steve", course_opted: true)
+
+  		expect(response["status"]).to eq("created")
+  	end
+
   end
 end
