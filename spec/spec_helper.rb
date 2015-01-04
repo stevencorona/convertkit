@@ -64,6 +64,20 @@ RSpec.configure do |config|
 ]
 json
       )
+
+      stub_request(:get, "https://api.convertkit.com/forms/4812649?k=f9922361d11e7339cc1cde3d54c071&v=2")
+        .to_return(body: <<-json
+{
+  "id": 4812649,
+  "title": "This form is here to test the API",
+  "description": "<p>Describe your offer</p>",
+  "button_msg": "Send me the offer",
+  "success_msg": "Thanks! Now check your email.",
+  "created_at": "2014-12-20T17:49:34Z",
+  "updated_at": "2014-12-20T17:49:44Z"
+}
+json
+          )
   end
 
 
