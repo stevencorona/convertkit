@@ -20,5 +20,18 @@ module ConvertKit
 
   	end
 
+  	it "returns a single form" do
+  		form = ConvertKit::Form.find(4812649, client)
+  		
+  		expect(form).to be_a(ConvertKit::Form)
+
+  		# Check the data is set
+  		expect(form.id).to eq(4812649)
+  		expect(form.title).to eq("This form is here to test the API")
+  		expect(form.description).to eq("<p>Describe your offer</p>")
+  		expect(form.button_msg).to eq("Send me the offer")
+  		expect(form.success_msg).to eq("Thanks! Now check your email.")
+  	end
+
   end
 end
