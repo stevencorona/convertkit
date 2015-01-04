@@ -10,6 +10,7 @@ module ConvertKit
       course.load(raw, client)
 
       course
+    end
 
     def load(data, client)
       @client = client
