@@ -29,7 +29,7 @@ module ConvertKit
 
       url = "#{@uri}#{path}"
 
-      json = self.class.post(path, body: {
+      json = self.class.post(url, body: {
         k: @key,
         v: @version,
         }.merge(params))
