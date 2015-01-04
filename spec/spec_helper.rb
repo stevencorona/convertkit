@@ -78,6 +78,21 @@ json
 }
 json
           )
+
+        stub_request(:post, "https://api.convertkit.com/forms/4812649/subscribe").
+         with(:body => "k=f9922361d11e7339cc1cde3d54c071&v=2&email=test%40test.com&fname=Steve&course_opted=true").
+         to_return(body: <<-json
+{
+  "status": "created", 
+  "form": "Test", 
+  "created_at": "2013-12-05T21:15:05Z", 
+  "subscription_status": "active", 
+  "email": "test@test.com", 
+  "fname": "Steve", 
+  "course_opted": true 
+}
+json
+          )
   end
 
 
