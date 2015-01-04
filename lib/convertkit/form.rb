@@ -1,7 +1,7 @@
 module ConvertKit
   class Form
 
-    attr_reader :id, :subscriber_count, :name, :details, :embed, :created_at, :updated_at
+    attr_reader :id, :subscriber_count, :title, :description, :name, :details, :embed, :success_msg, :button_msg, :created_at, :updated_at
     attr_writer :client
 
     def self.find(id, client)
@@ -16,12 +16,17 @@ module ConvertKit
       @client = client
 
       @id               = data["id"]
-      @subscriber_count = data["subscriber_count"]
-      @name             = data["name"]
-      @details          = data["details"]
-      @embed            = data["embed"]
-      @created_at       = data["created_at"]
-      @updated_at       = data["updated_at"]
+      @name             ||= data["name"]
+      @title            ||= data["title"]
+      @description      ||= data["description"]
+      @subscriber_count ||= data["subscriber_count"]
+      @name             ||= data["name"]
+      @details          ||= data["details"]
+      @embed            ||= data["embed"]
+      @success_msg      ||= data["success_msg"]
+      @button_msg       ||= data["button_msg"]
+      @created_at       ||= data["created_at"]
+      @updated_at       ||= data["updated_at"]
     end
     
     def initialize(id, client)
