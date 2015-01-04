@@ -20,8 +20,6 @@ module ConvertKit
       form
     end
 
-    private 
-
     def get_request(path)
       json = self.class.get("#{@uri}#{path}?k=#{@key}&v=#{@version}")
       JSON.parse(json.body)
