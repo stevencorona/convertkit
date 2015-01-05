@@ -93,6 +93,49 @@ json
 }
 json
           )
+
+       stub_request(:get, "https://api.convertkit.com/courses?k=f9922361d11e7339cc1cde3d54c071&v=2").
+         to_return(body: <<-json
+[
+  {
+    "id": 436,
+    "name": "Test Course",
+    "subscriber_count": 444,
+    "unsubscribe_count": 6,
+    "created_at": "2014-12-02T14:09:56Z",
+    "updated_at": "2015-01-05T01:32:22Z",
+    "details": "https://api.convertkit.com/courses/436?k=586883be97768f6cdd1db8ce5e73f9&v=1"
+  }
+]
+json
+          )
+
+       stub_request(:get, "https://api.convertkit.com/courses/4?k=f9922361d11e7339cc1cde3d54c071&v=2").
+         to_return(body: <<-json
+{
+  "id": 436,
+  "name": "Test Course",
+  "subscriber_count": 444,
+  "unsubscribe_count": 6,
+  "created_at": "2014-12-02T14:09:56Z",
+  "updated_at": "2015-01-05T01:32:22Z",
+  "click_rate": 12.98,
+  "open_rate": 69.35,
+  "length": 9,
+  "email_templates": [
+    {
+      "id": 3369,
+      "subject": "Test Email",
+      "send_day": 0,
+      "click_rate": 32.66,
+      "open_rate": 87.55,
+      "published": true
+    }
+  ]
+}
+json
+          )
+
   end
 
 
