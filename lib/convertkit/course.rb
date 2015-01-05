@@ -37,7 +37,7 @@ module ConvertKit
       courses = []
 
       raw.each do |raw_course|
-        course = ConvertKit::Course.new(raw_course["id"])
+        course = ConvertKit::Course.new(raw_course["id"], self)
         course.load(raw_course, self)
 
         courses << course
