@@ -1,6 +1,6 @@
 # Convertkit
 
-Rubygem for the excellent Converkit. Allows you to get forms, courses, and subscribe people to your mailing lists.
+Rubygem for the excellent [Convertkit](http://convertkit.com). Allows you to get forms, courses, and subscribe people to your mailing lists.
 
 *Only supports the v2 API*
 
